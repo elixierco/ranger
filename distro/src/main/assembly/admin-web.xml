@@ -474,8 +474,8 @@
         <fileMode>644</fileMode>
         <includes>
           <include>org.apache.ranger:ranger-presto-plugin</include>
-          <include>io.prestosql:presto-spi:jar:${presto.version}</include>
-          <include>io.prestosql:presto-jdbc:jar:${presto.version}</include>
+          <include>com.facebook.presto:presto-spi:jar:${presto.version}</include>
+          <include>com.facebook.presto:presto-jdbc:jar:${presto.version}</include>
         </includes>
       </binaries>
     </moduleSet>

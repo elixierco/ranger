@@ -33,12 +33,12 @@
     </parent>
     <dependencies>
         <dependency>
-            <groupId>io.prestosql</groupId>
+            <groupId>com.facebook.presto</groupId>
             <artifactId>presto-spi</artifactId>
             <version>${presto.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.prestosql</groupId>
+            <groupId>com.facebook.presto</groupId>
             <artifactId>presto-jdbc</artifactId>
             <version>${presto.version}</version>
         </dependency>
@@ -86,6 +86,11 @@
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>${protobuf-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang3.version}</version>
         </dependency>
     </dependencies>
     <build>

@@ -16,8 +16,8 @@ package org.apache.ranger.authorization.presto.authorizer;
 import com.google.inject.Injector;
 import com.google.inject.Scopes;
 import io.airlift.bootstrap.Bootstrap;
-import io.prestosql.spi.security.SystemAccessControl;
-import io.prestosql.spi.security.SystemAccessControlFactory;
+import com.facebook.presto.spi.security.SystemAccessControl;
+import com.facebook.presto.spi.security.SystemAccessControlFactory;
 
 import java.util.Map;
 

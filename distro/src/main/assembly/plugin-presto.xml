@@ -40,6 +40,9 @@
                     <include>com.google.guava:guava:jar:${presto.guava.version}</include>
                     <include>io.airlift:bootstrap:jar:${presto.airlift.version}</include>
                     <include>io.airlift:log:jar:${presto.airlift.version}</include>
+                    <include>org.apache.commons:commons-lang3:jar:${commons.lang3.version}</include>
+                    <include>org.apache.commons:commons-lang3</include>
+                    <include>org.apache.commons:commons-compress:jar:${commons.compress.version}</include>
                     <include>io.airlift:log-manager:jar:${presto.airlift.version}</include>
                     <include>io.airlift:configuration:jar:${presto.airlift.version}</include>
                     <include>javax.validation:validation-api:jar:${presto.validation-api.version}</include>
@@ -81,6 +84,9 @@
                     <include>commons-codec:commons-codec</include>
                     <include>commons-io:commons-io:jar:${commons.io.version}</include>
                     <include>commons-lang:commons-lang:jar:${commons.lang.version}</include>
+                    <include>org.apache.commons:commons-lang3:jar:${commons.lang3.version}</include>
+                    <include>org.apache.commons:commons-lang3</include>
+                    <include>org.apache.commons:commons-compress:jar:${commons.compress.version}</include>
                     <include>commons-logging:commons-logging:jar:${commons.logging.version}</include>
                     <include>com.google.guava:guava:jar:${google.guava.version}</include>
                     <include>com.google.protobuf:protobuf-java:jar:${protobuf-java.version}</include>
@@ -138,6 +144,9 @@
                     <include>org.apache.commons:commons-configuration2:jar:${commons.configuration.version}</include>
                     <include>commons-io:commons-io:jar:${commons.io.version}</include>
                     <include>commons-lang:commons-lang</include>
+                    <include>org.apache.commons:commons-lang3:jar:${commons.lang3.version}</include>
+                    <include>org.apache.commons:commons-lang3</include>
+                    <include>org.apache.commons:commons-compress:jar:${commons.compress.version}</include>
                     <include>commons-logging:commons-logging:jar:${commons.logging.version}</include>
                     <include>com.google.guava:guava:jar:${google.guava.version}</include>
                     <include>org.slf4j:slf4j-api:jar:${slf4j-api.version}</include>
