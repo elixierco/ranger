@@ -180,7 +180,7 @@
         <orc.core.version>1.6.7</orc.core.version>
         <owasp-java-html-sanitizer.version>20211018.2</owasp-java-html-sanitizer.version>
         <paranamer.version>2.3</paranamer.version>
-        <presto.version>333</presto.version>
+        <presto.version>0.278.1</presto.version>
         <trino.version>377</trino.version>
         <poi.version>5.2.2</poi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
