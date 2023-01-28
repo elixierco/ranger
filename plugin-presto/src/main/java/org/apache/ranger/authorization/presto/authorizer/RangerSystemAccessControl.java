@@ -446,6 +446,11 @@ public class RangerSystemAccessControl
     public void checkCanShowTablesMetadata(Identity identity, AccessControlContext context, CatalogSchemaName schema)
     {
         LOG.debug("RangerSystemAccessControl.checkCanShowTablesMetadata(" + schema.getCatalogName() + ", " + schema.getSchemaName() + ")");
+        if (schema.getSchemaName().equals("information_schema")) {
+            if (!hasPermission(createResource(schema.getCatalogName()), identity, PrestoAccessType.USE)) {
+                AccessDeniedException.denyShowTablesMetadata(schema.getSchemaName());
+            }
+        }
         if (!hasPermission(createResource(schema.getCatalogName(), schema.getSchemaName()), identity, PrestoAccessType.SHOW)) {
           AccessDeniedException.denyShowTablesMetadata(schema.getSchemaName());
         }
@@ -461,7 +466,9 @@ public class RangerSystemAccessControl
         for (SchemaTableName tableName : tableNames) {
           LOG.debug("RangerSystemAccessControl.filterTables(" + catalogName + ", " + tableName.getSchemaName() + ", " + tableName.getTableName() + ")");
           RangerPrestoResource res = createResource(catalogName, tableName.getSchemaName(), tableName.getTableName());
-          if (hasPermission(res, identity, PrestoAccessType.SELECT)) {
+          if (tableName.getSchemaName().equals("information_schema") && hasPermission(createResource(catalogName), identity, PrestoAccessType.USE)) {
+            filteredTableNames.add(tableName);
+          } else if (hasPermission(res, identity, PrestoAccessType.SELECT)) {
             filteredTableNames.add(tableName);
           }
         }
@@ -523,6 +530,9 @@ public class RangerSystemAccessControl
     public void checkCanSelectFromColumns(Identity identity, AccessControlContext context, CatalogSchemaTableName table, Set<String> columns)
     {
         LOG.debug("RangerSystemAccessControl.checkCanSelectFromColumns(" + table.getSchemaTableName().getTableName() + ", " + columns + ")");
+        if (table.getSchemaTableName().getSchemaName().equals("information_schema") && hasPermission(createResource(table.getCatalogName()), identity, PrestoAccessType.USE)) {
+            return;
+        }
         for (RangerPrestoResource res : createResource(table, columns)) {
           if (!hasPermission(res, identity, PrestoAccessType.SELECT)) {
             AccessDeniedException.denySelectColumns(table.getSchemaTableName().getTableName(), columns);
