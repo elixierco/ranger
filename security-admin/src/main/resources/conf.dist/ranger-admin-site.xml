@@ -61,6 +61,11 @@
 		<description></description>
 	</property>
 	<property>
+		<name>ranger.audit.elasticsearch.protocol</name>
+		<value>http</value>
+		<description></description>
+	</property>
+	<property>
 		<name>ranger.audit.elasticsearch.password</name>
 		<value></value>
 		<description></description>
