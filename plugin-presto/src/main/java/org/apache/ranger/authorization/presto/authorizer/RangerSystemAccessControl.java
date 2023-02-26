@@ -73,8 +73,6 @@ public class RangerSystemAccessControl
   final public static String RANGER_PRESTO_DEFAULT_HADOOP_CONF = "presto-ranger-site.xml";
   final public static String RANGER_PRESTO_SERVICETYPE = "presto";
   final public static String RANGER_PRESTO_APPID = "presto";
-  final public static String RANGER_PRESTO_DEFAULT_ADMINID = "rangeradmin";
-  final public static String RANGER_PRESTO_ADMINID_KEY = "RANGER_PRESTO_ADMINID";
 
   final private RangerBasePlugin rangerPlugin;
 
@@ -159,15 +157,6 @@ public class RangerSystemAccessControl
 
   private boolean hasPermission(RangerPrestoResource resource, Identity identity, PrestoAccessType accessType) {
     boolean ret = false;
-
-    String admin_user = System.getenv(RANGER_PRESTO_ADMINID_KEY);
-    if (admin_user == null) {
-        admin_user = RANGER_PRESTO_DEFAULT_ADMINID;
-    }
-
-    if (identity.getUser().equals(admin_user)) {
-        return true;
-    }
 
     RangerPrestoAccessRequest request = createAccessRequest(resource, identity, accessType);
   
